@@ -501,10 +501,12 @@
     </a>
   </div>
 <div class="row">
-  <div class="div col-lg-4">col-1</div>
-  <div class="div col-lg-4">col-2</div>
-  <div class="div col-lg-4"><button igxButton="flat">Flat</button></div>
+  <div class="div col-lg-3"><h2 routerLink="home">go to home</h2></div>
+  <div class="div col-lg-3"><h2 routerLink="role">go to role</h2></div>
+  <div class="div col-lg-3"><h2 routerLink="user">go to user</h2></div>
+  <div class="div col-lg-3"><h2 [routerLink]="['user',7]">go to user 7 deteail</h2></div>
 </div>
+<router-outlet></router-outlet>
 <ngx-spinner></ngx-spinner>
   <!-- Footer -->
   <footer>
@@ -536,4 +538,3 @@
 
 
 
-<router-outlet></router-outlet>
