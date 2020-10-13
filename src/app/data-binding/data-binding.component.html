@@ -1,16 +1,55 @@
 <div class="row">
-    <div class="col-md-3">
-        <h2>One Way Binding</h2>
+    <div class="col-md-12">
+        <h2>One Way Binding <span style="font-size: 0.9rem;">from component to DOM</span></h2>
         <div class="row">
             <div class="col-md-4">
                 <h3>İnterpolation</h3>
                 <p>
-                   ad: {{user.name}},soyad: {{user.surname}}
+                    ad: {{user.name}},soyad: {{user.surname}}
                 </p>
                 <p>Hesaplama: {{1+2}}</p>
                 <div>
                     <img height="200px" src="{{user.favorite_place_image}}" alt="user.favorite_place_image">
                 </div>
+            </div>
+            <div class="col-md-2">
+                <h3>Property Binding</h3>
+                <input [type]="type" [value]="user.name">
+            </div>
+            <div class="col-md-2">
+                <h3>Attribute Binding</h3>
+                <input [type]="type" [value]="user.name" [attr.disabled]="!user.isEditable ? 'disabled':null">
+            </div>
+            <div class="col-md-2">
+                <h3>Class Binding</h3>
+                <p [class.red]="user.isEditable"> renk değeri</p>
+                <div></div>
+            </div>
+            <div class="col-md-2">
+                <h3>Style Binding</h3>
+                <p [style.color]="user.name==='serhat'?'orange':'blue' ">style color</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <h2>One Way Binding <span style="font-size: 0.9rem;">from Dom to Componenet</span></h2>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Event Binding</h3>
+            <input type="text" [value]="user.name" (keyup.enter)="inputSubmit($event);">
+            <button (click)="buttonClicked();">Ok!</button>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <h2>Two way Binding</h2>
+        <div class="row">
+            <div class="col-md-12">
+                <h3>ngModel</h3>
+                <input type="text" [(ngModel)]="user.name">
+                <p>{{user.name}}</p>
             </div>
         </div>
     </div>
