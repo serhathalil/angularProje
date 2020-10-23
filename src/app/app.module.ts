@@ -11,7 +11,7 @@ import { RoleComponent } from './role/role.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { IgxNavbarModule, IgxNavigationDrawerModule, IgxIconModule   } from 'igniteui-angular';
-
+import { CookieService } from 'ngx-cookie-service';
  
 
 @NgModule({
@@ -41,7 +41,7 @@ import { IgxNavbarModule, IgxNavigationDrawerModule, IgxIconModule   } from 'ign
     IgxNavigationDrawerModule
    
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
